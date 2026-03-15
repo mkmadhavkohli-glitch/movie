@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MoodFlix Movies</title>
+
+<style>
+
+body{
+
+background:#0f0f0f;
+
+color:white;
+
+font-family:Arial;
+
+margin:0;
+
+}
+
+/* header */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 40px;
+
+background:#111;
+
+}
+
+/* title */
+
+.title{
+
+font-size:24px;
+
+}
+
+/* movie grid */
+
+.movies{
+
+display:grid;
+
+grid-template-columns:repeat(4,220px);
+
+gap:25px;
+
+justify-content:center;
+
+margin-top:40px;
+
+}
+
+/* movie card */
+
+.card{
+
+height:300px;
+
+background:#222;
+
+border-radius:10px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#777;
+
+font-size:18px;
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 15px #7df9ff;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="title" id="moodTitle">Movies</div>
+
+</div>
+
+<div class="movies">
+
+<div class="card">Movie Poster</div>
+<div class="card">Movie Poster</div>
+<div class="card">Movie Poster</div>
+<div class="card">Movie Poster</div>
+
+<div class="card">Movie Poster</div>
+<div class="card">Movie Poster</div>
+<div class="card">Movie Poster</div>
+<div class="card">Movie Poster</div>
+
+</div>
+
+<script>
+
+/* get mood from url */
+
+const params = new URLSearchParams(window.location.search)
+
+const mood = params.get("mood")
+
+/* change title */
+
+document.getElementById("moodTitle").innerText =
+"Movies for " + mood + " mood"
+
+</script>
+
+</body>
+</html>
